@@ -1,9 +1,9 @@
 import React from 'react';
 
 const exposureOptions = [
-  { key: 'cat1', label: 'Category I — Touching/feeding or lick on intact skin (No vaccine/RIG)', icon: '🟢', severity: 'Low' },
-  { key: 'cat2', label: 'Category II — Nibble/minor scratches by teeth without bleeding (Wound management + vaccine?)', icon: '🟡', severity: 'Medium' },
-  { key: 'cat3', label: 'Category III — Single/multiple transdermal bites, bleeding, lick on broken skin, mucous membrane exposure, bite by wild animal (Wound management + vaccine ± RIG)', icon: '🔴', severity: 'High' }
+  { key: 'cat1', label: 'Category I — Touching/feeding or lick on intact skin', icon: '🟢', severity: 'Low' },
+  { key: 'cat2', label: 'Category II — Nibble/minor scratches by teeth without bleeding', icon: '🟡', severity: 'Medium' },
+  { key: 'cat3', label: 'Category III — Single/multiple transdermal bites, bleeding, lick on broken skin, mucous membrane exposure, bite by wild animal', icon: '🔴', severity: 'High' }
 ];
 
 export default function ExposureType({ exposureType, setExposureType, immunoStatus, setImmunoStatus, pastCCV, setPastCCV, completed3Months, setCompleted3Months, onNext, onBack }) {
@@ -21,7 +21,7 @@ export default function ExposureType({ exposureType, setExposureType, immunoStat
           color: 'var(--text-muted)', 
           marginTop: '8px',
           fontWeight: '500'
-        }}>Classify the exposure severity and provide relevant clinical information</p>
+        }}>Classify the exposure</p>
       </div>
 
       <div className="options">
@@ -41,38 +41,6 @@ export default function ExposureType({ exposureType, setExposureType, immunoStat
         ))}
       </div>
 
-      <div className="form-block">
-        <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>🩸</span>
-          <span>Is the patient on corticosteroids / immunosuppressives / chemotherapy / has HIV/AIDS?</span>
-        </label>
-        <div className="inline-options">
-          <button className={`small ${immunoStatus === 'yes' ? 'selected' : ''}`} onClick={() => setImmunoStatus('yes')}>Yes</button>
-          <button className={`small ${immunoStatus === 'no' ? 'selected' : ''}`} onClick={() => setImmunoStatus('no')}>No</button>
-        </div>
-      </div>
-
-      <div className="form-block">
-        <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>📋</span>
-          <span>Reliable history of receiving full schedule of CCV in the past?</span>
-        </label>
-        <div className="inline-options">
-          <button className={`small ${pastCCV === 'yes' ? 'selected' : ''}`} onClick={() => setPastCCV('yes')}>Yes</button>
-          <button className={`small ${pastCCV === 'no' ? 'selected' : ''}`} onClick={() => setPastCCV('no')}>No</button>
-        </div>
-      </div>
-
-      <div className="form-block">
-        <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>📅</span>
-          <span>If yes above — has this schedule been completed in last 3 months?</span>
-        </label>
-        <div className="inline-options">
-          <button className={`small ${completed3Months === 'yes' ? 'selected' : ''}`} onClick={() => setCompleted3Months('yes')}>Yes</button>
-          <button className={`small ${completed3Months === 'no' ? 'selected' : ''}`} onClick={() => setCompleted3Months('no')}>No</button>
-        </div>
-      </div>
 
       <div className="row actions">
         <button className="btn ghost" onClick={onBack}>← Back</button>

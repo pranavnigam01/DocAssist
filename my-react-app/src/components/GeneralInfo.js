@@ -17,23 +17,23 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           margin: '0 auto',
           fontWeight: '500'
         }}>
-          This clinical decision support tool assists healthcare professionals in determining whether Rabies Vaccine and/or RIG are required following an animal exposure.
-          The following clinical guidelines are essential and derived from established medical protocols.
+          This clinical decision support tool has been designed to assist healthcare professionals in determining whether Rabies Vaccine and/or Rabies Immunoglobulin(RIG) are required following an animal exposure.
+          This support tool is based on the National Guidelines for Rabies Prophylaxis 2019 issued by MOHFW, Govt of India. Before proceeding further, the Health Care Professional is required to read the information provided below:-
         </p>
       </div>
 
       <div style={{ background: 'var(--bg-alt)', padding: '24px', borderRadius: '16px', marginBottom: '24px' }}>
         <ul className="info-list">
-          <li>Pregnancy, lactation, old age, infancy and concurrent illness are NOT contraindications.</li>
-          <li>Only Cell Culture Vaccines (CCV) are used. Nerve tissue vaccines not used.</li>
-          <li>Patients on chloroquine, immunosuppressives, chemotherapy or with HIV/AIDS should receive IM vaccine only.</li>
+          <li>Pregnancy, lactation, old age, infancy and concurrent illness are NOT contraindications for administering Rabies Vaccine.</li>
+          <li>Only Cell Culture Vaccines (CCV) are used nowadays. Nerve tissue vaccines not used.</li>
+          <li>Patients on chloroquine or immunosuppressives/chemotherapy or patients with HIV/AIDS should receive Rabies Vaccine by IM Route ONLY.</li>
+          <li>PEP to be given if indicated irrespective of the vaccination status of the biting animal</li>
           <li>Vaccine should be given immediately after reconstitution or within 6–8 hours if stored at 2–8°C.</li>
           <li>Previous reaction to a vaccine is a contraindication to that vaccine.</li>
           <li>Vaccine can be given even months or years after exposure.</li>
-          <li>Skin test before ERIG; not required for HRIG.</li>
+          <li>Skin test to be done before ERIG; not required for HRIG.</li>
           <li>RIG should be administered within 7 days of first vaccine dose.</li>
-          <li>Observe patient 15–20 minutes after administration.</li>
-          <li>Wound management: wash with soap and water for 15 minutes + antiseptic.</li>
+          <li>Wound Management is essential for all wounds and comprises of washing the wound with soap and water and applying abtiseptic like Povidone Iodine. If no antiseptic or soap available, wash with plain water.</li>
         </ul>
       </div>
 
@@ -64,7 +64,7 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
               accentColor: 'var(--accent)'
             }}
           /> 
-          <span>I acknowledge that I have read and understood the clinical guidelines above.</span>
+          <span>I acknowledge that I have read and understood the information above.</span>
         </label>
       </div>
 

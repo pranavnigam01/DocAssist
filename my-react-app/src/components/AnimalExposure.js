@@ -5,7 +5,7 @@ const options = [
   { key: 'wild', label: 'Wild animal', icon: '🦁' },
   { key: 'wildrodent', label: 'Wild rodent or rodent in forest', icon: '🐀' },
   { key: 'secretions', label: 'Exposure to secretions of a rabies patient', icon: '🧪' },
-  { key: 'domesticrodent', label: 'Domestic rodent / squirrel / hare / rabbit / bat / snake / lizards / chameleon / horse / cow / buffalo / sheep / goat / human — No PEP required', icon: '🐰' },
+  { key: 'domesticrodent', label: 'Domestic rodent / squirrel / hare / rabbit / bat / snake / lizards / chameleon / horse / cow / buffalo / sheep / goat / human', icon: '🐰' },
   { key: 'other', label: 'Any other animal — consult literature', icon: '❓' }
 ];
 

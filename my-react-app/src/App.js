@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import GeneralInfo from './components/GeneralInfo';
 import AnimalExposure from './components/AnimalExposure';
-import VaccinationStatus from './components/VaccinationStatus';
 import ExposureType from './components/ExposureType';
 import Result from './components/Result';
+import NoPEP from './components/NoPEP';
+import ImmunoStatusQuestion from './components/ImmunoStatusQuestion';
+import PastCCVQuestion from './components/PastCCVQuestion';
+import Completed3MonthsQuestion from './components/Completed3MonthsQuestion';
+import CategoryIIResult from './components/CategoryIIResult';
 
 export default function App() {
   const [step, setStep] = useState(0);
@@ -31,7 +35,6 @@ export default function App() {
   const steps = [
     'General Information',
     'Animal Exposure',
-    'Vaccination Status',
     'Type of Exposure & Clinical Details',
     'Result'
   ];
@@ -67,21 +70,39 @@ export default function App() {
             <AnimalExposure
               animal={animal}
               setAnimal={setAnimal}
-              onNext={() => setStep(2)}
+              onNext={() => {
+                if (animal === 'domesticrodent') {
+                  setStep(5); // Go to NoPEP screen
+                } else {
+                  setStep(2); // Continue to Exposure Type
+                }
+              }}
               onBack={() => setStep(0)}
             />
           )}
 
-          {step === 2 && (
-            <VaccinationStatus
-              vaxStatus={vaxStatus}
-              setVaxStatus={setVaxStatus}
-              onNext={() => setStep(3)}
-              onBack={() => setStep(1)}
+          {step === 5 && (
+            <NoPEP
+              animal={animal}
+              exposureType={exposureType}
+              onBack={() => {
+                if (exposureType === 'cat1') {
+                  setStep(2); // Back to Exposure Type
+                } else {
+                  setStep(1); // Back to Animal Exposure
+                }
+              }}
+              onReset={reset}
+              customMessage={exposureType === 'cat1' ? 'NO VACCINE OR RIG IS REQUIRED' : undefined}
+              customTitle={exposureType === 'cat1' ? 'No Vaccine or RIG Required' : undefined}
+              customDescription={exposureType === 'cat1' 
+                ? 'Category I exposure: No vaccine or RIG required. Perform wound management.' 
+                : undefined
+              }
             />
           )}
 
-          {step === 3 && (
+          {step === 2 && (
             <ExposureType
               exposureType={exposureType}
               setExposureType={setExposureType}
@@ -91,15 +112,97 @@ export default function App() {
               setPastCCV={setPastCCV}
               completed3Months={completed3Months}
               setCompleted3Months={setCompleted3Months}
-              onNext={() => setStep(4)}
+              onNext={() => {
+                if (exposureType === 'cat1') {
+                  setStep(5); // Go to NoPEP screen for Category I
+                } else if (exposureType === 'cat2' || exposureType === 'cat3') {
+                  setStep(6); // Go to ImmunoStatusQuestion for Category II and III
+                } else {
+                  setStep(3); // Continue to Result (fallback)
+                }
+              }}
+              onBack={() => setStep(1)}
+            />
+          )}
+
+          {step === 6 && (
+            <ImmunoStatusQuestion
+              immunoStatus={immunoStatus}
+              setImmunoStatus={setImmunoStatus}
+              onNext={() => {
+                if (immunoStatus === 'yes') {
+                  setStep(9); // Go to result: IM vaccine + RIG
+                } else {
+                  setStep(7); // Go to PastCCVQuestion
+                }
+              }}
               onBack={() => setStep(2)}
             />
           )}
 
-          {step === 4 && (
+          {step === 7 && (
+            <PastCCVQuestion
+              pastCCV={pastCCV}
+              setPastCCV={setPastCCV}
+              onNext={() => {
+                if (pastCCV === 'yes') {
+                  setStep(8); // Go to Completed3MonthsQuestion
+                } else {
+                  setStep(9); // Go to result: full schedule
+                }
+              }}
+              onBack={() => setStep(6)}
+            />
+          )}
+
+          {step === 8 && (
+            <Completed3MonthsQuestion
+              completed3Months={completed3Months}
+              setCompleted3Months={setCompleted3Months}
+              onNext={() => {
+                if (completed3Months === 'yes') {
+                  setStep(9); // Go to result: no vaccine needed
+                } else {
+                  setStep(9); // Go to result: Day 0 and Day 3
+                }
+              }}
+              onBack={() => setStep(7)}
+            />
+          )}
+
+          {step === 9 && (
+            <CategoryIIResult
+              type={
+                immunoStatus === 'yes' ? 'immunoYes' :
+                pastCCV === 'yes' && completed3Months === 'yes' ? 'noVaccineNeeded' :
+                pastCCV === 'yes' && completed3Months === 'no' ? 'day0and3' :
+                'fullSchedule'
+              }
+              exposureType={exposureType}
+              onBack={() => {
+                // Determine which screen to go back to based on the flow
+                if (immunoStatus === 'yes') {
+                  // Came from immunoStatus question
+                  setStep(6);
+                } else if (pastCCV === 'yes' && completed3Months !== null) {
+                  // Came from completed3Months question
+                  setStep(8);
+                } else if (pastCCV === 'no') {
+                  // Came from pastCCV question with No
+                  setStep(7);
+                } else {
+                  // Default fallback
+                  setStep(6);
+                }
+              }}
+              onReset={reset}
+            />
+          )}
+
+          {step === 3 && (
             <Result
               data={{ animal, vaxStatus, exposureType, immunoStatus, pastCCV, completed3Months }}
-              onBack={() => setStep(3)}
+              onBack={() => setStep(2)}
               onReset={reset}
             />
           )}
