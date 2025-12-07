@@ -29,6 +29,13 @@ export default function CategoryIIResult({ type, exposureType, onBack, onReset }
       color: '#f59e0b',
       details: 'Administer full schedule of intramuscular or intradermal Rabies Vaccine and do Wound Management. No need of RIG.',
       bgColor: 'rgba(245, 158, 11, 0.05)'
+    },
+    cat3WithRIG: {
+      title: 'ADMINISTER FULL SCHEDULE OF INTRAMUSCULAR OR INTRADERMAL RABIES VACCINE WITH RIG',
+      icon: '💉',
+      color: '#ef4444',
+      details: 'Administer full schedule of intramuscular or intradermal Rabies Vaccine along with RIG. Perform Wound Management.',
+      bgColor: 'rgba(239, 68, 68, 0.05)'
     }
   };
 

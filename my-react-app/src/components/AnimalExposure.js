@@ -4,7 +4,6 @@ const options = [
   { key: 'warm', label: 'Warm-blooded animal (Dog / Cat / Monkey / Mongoose / Jackal)', icon: '🐕' },
   { key: 'wild', label: 'Wild animal', icon: '🦁' },
   { key: 'wildrodent', label: 'Wild rodent or rodent in forest', icon: '🐀' },
-  { key: 'secretions', label: 'Exposure to secretions of a rabies patient', icon: '🧪' },
   { key: 'domesticrodent', label: 'Domestic rodent / squirrel / hare / rabbit / bat / snake / lizards / chameleon / horse / cow / buffalo / sheep / goat / human', icon: '🐰' }
 ];
 

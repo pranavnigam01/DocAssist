@@ -33,7 +33,7 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           <li>Vaccine can be given even months or years after exposure.</li>
           <li>Skin test to be done before ERIG; not required for HRIG.</li>
           <li>RIG should be administered within 7 days of first vaccine dose.</li>
-          <li>Wound Management is essential for all wounds and comprises of washing the wound with soap and water and applying abtiseptic like Povidone Iodine. If no antiseptic or soap available, wash with plain water.</li>
+          <li>Wound Management is essential for all wounds and comprises of washing the wound with soap and water for 15 minutes and applying antiseptic like Povidone Iodine. If no antiseptic or soap available, wash with plain water.</li>
         </ul>
       </div>
 

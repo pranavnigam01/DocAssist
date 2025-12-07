@@ -1,9 +1,39 @@
 import React from 'react';
 
 const exposureOptions = [
-  { key: 'cat1', label: 'Category I — Touching/feeding or lick on intact skin', icon: '🟢', severity: 'Low' },
-  { key: 'cat2', label: 'Category II — Nibble/minor scratches by teeth without bleeding', icon: '🟡', severity: 'Medium' },
-  { key: 'cat3', label: 'Category III — Single/multiple transdermal bites, bleeding, lick on broken skin, mucous membrane exposure, bite by wild animal', icon: '🔴', severity: 'High' }
+  { 
+    key: 'cat1', 
+    label: 'Category I', 
+    icon: '🟢', 
+    severity: 'Low',
+    description: [
+      'Touching or feeding animals',
+      'Licks of intact skin',
+      'Contact of intact skin with secretions/excretions of rabid animal or human case'
+    ]
+  },
+  { 
+    key: 'cat2', 
+    label: 'Category II', 
+    icon: '🟡', 
+    severity: 'Medium',
+    description: [
+      'Nibbling of uncovered skin',
+      'Minor scratches',
+      'Abrasions without bleeding'
+    ]
+  },
+  { 
+    key: 'cat3', 
+    label: 'Category III', 
+    icon: '🔴', 
+    severity: 'High',
+    description: [
+      'Single or Multiple Transdermal bites or scratches',
+      'Licks on broken skin',
+      'Contamination of mucous membrane with saliva from licks'
+    ]
+  }
 ];
 
 export default function ExposureType({ exposureType, setExposureType, immunoStatus, setImmunoStatus, pastCCV, setPastCCV, completed3Months, setCompleted3Months, onNext, onBack }) {
@@ -30,12 +60,25 @@ export default function ExposureType({ exposureType, setExposureType, immunoStat
             key={o.key} 
             className={`option ${exposureType === o.key ? 'selected' : ''}`} 
             onClick={() => setExposureType(o.key)}
-            style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
+            style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '20px 24px' }}
           >
-            <span style={{ fontSize: '24px' }}>{o.icon}</span>
+            <span style={{ fontSize: '24px', marginTop: '2px' }}>{o.icon}</span>
             <div style={{ flex: 1, textAlign: 'left' }}>
-              <div style={{ fontWeight: '600', marginBottom: '4px' }}>{o.label.split('—')[0].trim()} ({o.severity} Risk)</div>
-              <div style={{ fontSize: '14px', color: 'var(--text-light)' }}>{o.label.split('—')[1]?.trim()}</div>
+              <div style={{ fontWeight: '600', marginBottom: '8px', fontSize: '16px' }}>
+                {o.label} ({o.severity} Risk)
+              </div>
+              <ul style={{ 
+                margin: 0, 
+                paddingLeft: '20px', 
+                listStyle: 'disc',
+                fontSize: '14px',
+                color: 'var(--text-light)',
+                lineHeight: '1.6'
+              }}>
+                {o.description.map((item, idx) => (
+                  <li key={idx} style={{ marginBottom: '4px' }}>{item}</li>
+                ))}
+              </ul>
             </div>
           </button>
         ))}

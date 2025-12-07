@@ -282,15 +282,37 @@ body {
 
 .content {
   padding: 8px 4px;
-  animation: fadeIn 0.4s ease-out;
+  position: relative;
+  min-height: 200px;
 }
 
-@keyframes fadeIn {
+.content.fade-in {
+  animation: fadeInSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content.fade-out {
+  animation: fadeOutSlide 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInSlide {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }
 
@@ -372,7 +394,7 @@ h5 {
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.3px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
   position: relative;
   overflow: hidden;
@@ -389,7 +411,7 @@ h5 {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition: width 0.3s, height 0.3s;
 }
 
 .btn:hover::before {
@@ -442,7 +464,7 @@ h5 {
   background: white;
   text-align: left;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 15px;
   font-weight: 500;
   color: var(--text);
@@ -460,7 +482,7 @@ h5 {
   width: 4px;
   background: var(--accent-gradient);
   transform: scaleY(0);
-  transition: transform 0.3s;
+  transition: transform 0.15s;
   border-radius: 16px 0 0 16px;
 }
 
@@ -512,7 +534,7 @@ h5 {
   border-radius: 16px;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .form-block:hover {
@@ -545,7 +567,7 @@ h5 {
   font-weight: 600;
   font-size: 14px;
   color: var(--text);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   flex: 1;
   min-width: 120px;
   box-shadow: var(--shadow-xs);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GeneralInfo from './components/GeneralInfo';
 import AnimalExposure from './components/AnimalExposure';
 import ExposureType from './components/ExposureType';
@@ -12,6 +12,8 @@ import CategoryIIResult from './components/CategoryIIResult';
 export default function App() {
   const [step, setStep] = useState(0);
   const [acknowledged, setAcknowledged] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [displayStep, setDisplayStep] = useState(0);
 
   // collected data
   const [animal, setAnimal] = useState(null);
@@ -39,6 +41,18 @@ export default function App() {
     'Result'
   ];
 
+  // Handle page transition effect
+  useEffect(() => {
+    if (step !== displayStep) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        setDisplayStep(step);
+        setIsTransitioning(false);
+      }, 200); // Half of transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [step, displayStep]);
+
   return (
     <div className="app-root">
       <div className="card">
@@ -57,8 +71,8 @@ export default function App() {
           ))}
         </div>
 
-        <div className="content">
-          {step === 0 && (
+        <div className={`content ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+          {displayStep === 0 && (
             <GeneralInfo
               acknowledged={acknowledged}
               setAcknowledged={setAcknowledged}
@@ -66,7 +80,7 @@ export default function App() {
             />
           )}
 
-          {step === 1 && (
+          {displayStep === 1 && (
             <AnimalExposure
               animal={animal}
               setAnimal={setAnimal}
@@ -81,7 +95,7 @@ export default function App() {
             />
           )}
 
-          {step === 5 && (
+          {displayStep === 5 && (
             <NoPEP
               animal={animal}
               exposureType={exposureType}
@@ -102,7 +116,7 @@ export default function App() {
             />
           )}
 
-          {step === 2 && (
+          {displayStep === 2 && (
             <ExposureType
               exposureType={exposureType}
               setExposureType={setExposureType}
@@ -125,7 +139,7 @@ export default function App() {
             />
           )}
 
-          {step === 6 && (
+          {displayStep === 6 && (
             <ImmunoStatusQuestion
               immunoStatus={immunoStatus}
               setImmunoStatus={setImmunoStatus}
@@ -140,7 +154,7 @@ export default function App() {
             />
           )}
 
-          {step === 7 && (
+          {displayStep === 7 && (
             <PastCCVQuestion
               pastCCV={pastCCV}
               setPastCCV={setPastCCV}
@@ -155,7 +169,7 @@ export default function App() {
             />
           )}
 
-          {step === 8 && (
+          {displayStep === 8 && (
             <Completed3MonthsQuestion
               completed3Months={completed3Months}
               setCompleted3Months={setCompleted3Months}
@@ -170,12 +184,13 @@ export default function App() {
             />
           )}
 
-          {step === 9 && (
+          {displayStep === 9 && (
             <CategoryIIResult
               type={
                 immunoStatus === 'yes' ? 'immunoYes' :
                 pastCCV === 'yes' && completed3Months === 'yes' ? 'noVaccineNeeded' :
                 pastCCV === 'yes' && completed3Months === 'no' ? 'day0and3' :
+                exposureType === 'cat3' && immunoStatus === 'no' && pastCCV === 'no' ? 'cat3WithRIG' :
                 'fullSchedule'
               }
               exposureType={exposureType}
@@ -199,7 +214,7 @@ export default function App() {
             />
           )}
 
-          {step === 3 && (
+          {displayStep === 3 && (
             <Result
               data={{ animal, vaxStatus, exposureType, immunoStatus, pastCCV, completed3Months }}
               onBack={() => setStep(2)}
