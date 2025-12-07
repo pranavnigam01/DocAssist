@@ -15,9 +15,9 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
 
   const getExposureLabel = (key) => {
     const labels = {
-      'cat1': 'Category I — Touching/feeding or lick on intact skin',
-      'cat2': 'Category II — Nibble/minor scratches by teeth without bleeding',
-      'cat3': 'Category III — Single/multiple transdermal bites, bleeding, lick on broken skin, mucous membrane exposure, bite by wild animal'
+      'cat1': 'Category I',
+      'cat2': 'Category II',
+      'cat3': 'Category III'
     };
     return labels[key] || key;
   };
@@ -121,7 +121,7 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
           }}>
             {exposureType === 'cat1' ? (
               <>
-                For <strong style={{ color: 'var(--success)' }}>Category I exposures</strong> (touching/feeding or lick on intact skin), there is no requirement for rabies vaccine or Rabies Immunoglobulin (RIG).
+                For <strong style={{ color: 'var(--success)' }}>Category I exposures</strong> No wound management, Rabies Vaccine or RIG is required. Just allay anxiety of the patient.
               </>
             ) : (
               <>
@@ -131,23 +131,25 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
               </>
             )}
           </p>
-          <div style={{
-            marginTop: '20px',
-            padding: '16px',
-            background: 'var(--success-light)',
-            borderRadius: '12px',
-            border: '1px solid rgba(16, 185, 129, 0.2)'
-          }}>
-            <p style={{ 
-              margin: 0, 
-              fontSize: '15px', 
-              lineHeight: '1.7',
-              color: 'var(--text)',
-              fontWeight: '500'
+          { exposureType === 'cat1' ? "" :
+            <div style={{
+              marginTop: '20px',
+              padding: '16px',
+              background: 'var(--success-light)',
+              borderRadius: '12px',
+              border: '1px solid rgba(16, 185, 129, 0.2)'
             }}>
+              <p style={{ 
+                margin: 0, 
+                fontSize: '15px', 
+                lineHeight: '1.7',
+                color: 'var(--text)',
+                fontWeight: '500'
+              }}>
               <strong style={{ color: 'var(--success)' }}>Important:</strong> Perform appropriate wound management including thorough washing with soap and water for at least 15 minutes, followed by application of an antiseptic solution.
-            </p>
-          </div>
+              </p>
+            </div>
+          }
         </div>
 
         <div style={{
