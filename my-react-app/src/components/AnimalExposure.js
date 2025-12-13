@@ -1,10 +1,9 @@
 import React from 'react';
 
 const options = [
-  { key: 'warm', label: 'Warm-blooded animal (Dog / Cat / Monkey / Mongoose / Jackal)', icon: '🐕' },
-  { key: 'wild', label: 'Wild animal', icon: '🦁' },
-  { key: 'wildrodent', label: 'Wild rodent or rodent in forest', icon: '🐀' },
-  { key: 'domesticrodent', label: 'Domestic rodent / squirrel / hare / rabbit / bat / snake / lizards / chameleon / horse / cow / buffalo / sheep / goat / human', icon: '🐰' }
+  { key: 'warm', label: 'Dog/Cat/Monkey/Mongoose', icon: '🐕' },
+  { key: 'wildrodent', label: 'Wild animal/wild rodent or rodent in forest', icon: '🦁' },
+  { key: 'domesticrodent', label: 'Domestic rodent/squirrel/hare/rabbit/bat/snake/lizards/chameleon/horse/cow/buffalo/sheep/goat/human/birds', icon: '🐰' }
 ];
 
 export default function AnimalExposure({ animal, setAnimal, onNext, onBack }) {

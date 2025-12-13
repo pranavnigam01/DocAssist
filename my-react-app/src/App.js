@@ -8,6 +8,7 @@ import ImmunoStatusQuestion from './components/ImmunoStatusQuestion';
 import PastCCVQuestion from './components/PastCCVQuestion';
 import Completed3MonthsQuestion from './components/Completed3MonthsQuestion';
 import CategoryIIResult from './components/CategoryIIResult';
+import CategoryIIIExposure from './components/CategoryIIIExposure';
 
 export default function App() {
   const [step, setStep] = useState(0);
@@ -87,8 +88,10 @@ export default function App() {
               onNext={() => {
                 if (animal === 'domesticrodent') {
                   setStep(5); // Go to NoPEP screen
+                } else if (animal === 'wildrodent') {
+                  setStep(10); // Go to Category III Exposure screen
                 } else {
-                  setStep(2); // Continue to Exposure Type
+                  setStep(2); // Continue to Exposure Type (for Dog/Cat/Monkey/Mongoose)
                 }
               }}
               onBack={() => setStep(0)}
@@ -139,6 +142,14 @@ export default function App() {
             />
           )}
 
+          {displayStep === 10 && (
+            <CategoryIIIExposure
+              onNext={() => setStep(6)} // Go to ImmunoStatusQuestion
+              onBack={() => setStep(1)} // Back to Animal Exposure
+              setExposureType={setExposureType}
+            />
+          )}
+
           {displayStep === 6 && (
             <ImmunoStatusQuestion
               immunoStatus={immunoStatus}
@@ -150,7 +161,14 @@ export default function App() {
                   setStep(7); // Go to PastCCVQuestion
                 }
               }}
-              onBack={() => setStep(2)}
+              onBack={() => {
+                // If came from CategoryIIIExposure, go back there, otherwise go to ExposureType
+                if (animal === 'wildrodent') {
+                  setStep(10);
+                } else {
+                  setStep(2);
+                }
+              }}
             />
           )}
 
