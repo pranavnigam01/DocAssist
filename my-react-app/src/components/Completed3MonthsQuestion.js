@@ -14,7 +14,7 @@ export default function Completed3MonthsQuestion({ completed3Months, setComplete
           fontSize: '14px', 
           color: 'var(--text-muted)', 
           marginTop: '8px',
-          fontWeight: '500'
+          fontWeight: '600'
         }}>Please provide information about when the vaccination was completed</p>
       </div>
 

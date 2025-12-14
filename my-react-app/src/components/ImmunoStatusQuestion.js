@@ -12,9 +12,9 @@ export default function ImmunoStatusQuestion({ immunoStatus, setImmunoStatus, on
         <h3>Clinical Assessment</h3>
         <p style={{ 
           fontSize: '14px', 
-          color: 'var(--text-muted)', 
+          color: '#2b5dc8ff',
           marginTop: '8px',
-          fontWeight: '500'
+          fontWeight: '600'
         }}>Please provide the following clinical information</p>
       </div>
 

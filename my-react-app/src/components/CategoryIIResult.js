@@ -13,7 +13,7 @@ export default function CategoryIIResult({ type, exposureType, onBack, onReset }
       title: 'NO NEED OF RABIES VACCINE AND RIG',
       icon: '✅',
       color: '#10b981',
-      details: 'The patient has completed a reliable schedule of Rabies Cell Culture Vaccine within the last 3 months. No need of rabies vaccine or RIG. Perform wound management.',
+      details: 'The patient has completed a reliable/documented schedule of Rabies Cell Culture Vaccine within the last 3 months. No need of rabies vaccine or RIG. Perform wound management.',
       bgColor: 'rgba(16, 185, 129, 0.05)'
     },
     day0and3: {

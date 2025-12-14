@@ -22,38 +22,10 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
     return labels[key] || key;
   };
 
-  const title = customTitle || 'No PEP Required';
-  const description = customDescription || 'Based on the selected animal species, Post-Exposure Prophylaxis (PEP) is not required for this exposure.';
-  const mainMessage = customMessage || 'No PEP Required';
+  const title = customTitle || 'No PEP Required. Wound Management to be done';
 
   return (
     <div>
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <div style={{ 
-          fontSize: '72px', 
-          marginBottom: '24px',
-          filter: 'drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3))'
-        }}>✅</div>
-        <h3 style={{ 
-          color: 'var(--success)',
-          fontSize: '32px',
-          marginBottom: '16px',
-          textTransform: 'uppercase',
-          letterSpacing: '1px'
-        }}>{mainMessage}</h3>
-        <p style={{ 
-          fontSize: '16px', 
-          color: 'var(--text-light)', 
-          marginTop: '12px',
-          fontWeight: '500',
-          maxWidth: '600px',
-          margin: '12px auto 0',
-          lineHeight: '1.7'
-        }}>
-          {description}
-        </p>
-      </div>
-
       <div className="result-card" style={{ 
         borderColor: 'var(--success)',
         background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%)'
@@ -119,7 +91,7 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
               <>
                 For exposures involving <strong style={{ color: 'var(--success)' }}>
                   {animal ? getAnimalLabel(animal) : 'domestic animals'}
-                </strong>, there is no requirement for Post-Exposure Prophylaxis (PEP) with rabies vaccine or Rabies Immunoglobulin (RIG).
+                </strong>, there is no requirement for Post-Exposure Prophylaxis (PEP) with rabies vaccine or Rabies Immunoglobulin (RIG). Wound Management to be done.
               </>
             )}
           </p>

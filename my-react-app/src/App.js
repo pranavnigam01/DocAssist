@@ -60,8 +60,8 @@ export default function App() {
         <h1 className="title">POST EXPOSURE PROPHYLAXIS (PEP) FOR RABIES PREVENTION</h1>
         <div className="steps">
           {steps.map((s, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className={`step ${i === step ? 'active' : ''} ${i < step ? 'completed' : ''}`}
             >
               <div className="step-number">
@@ -112,8 +112,8 @@ export default function App() {
               onReset={reset}
               customMessage={exposureType === 'cat1' ? 'NO VACCINE OR RIG IS REQUIRED' : undefined}
               customTitle={exposureType === 'cat1' ? 'No Vaccine or RIG Required' : undefined}
-              customDescription={exposureType === 'cat1' 
-                ? 'Category I exposure: No vaccine or RIG required. Perform wound management.' 
+              customDescription={exposureType === 'cat1'
+                ? 'Category I exposure: No vaccine or RIG required. Perform wound management.'
                 : undefined
               }
             />

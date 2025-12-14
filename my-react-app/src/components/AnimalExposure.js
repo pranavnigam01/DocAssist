@@ -17,11 +17,11 @@ export default function AnimalExposure({ animal, setAnimal, onNext, onBack }) {
         }}>🐾</div>
         <h3>Select the animal species to which the patient was exposed:</h3>
         <p style={{ 
-          fontSize: '14px', 
-          color: 'var(--text-muted)', 
+          fontSize: '16px', 
+          color: '#2b5dc8ff', 
           marginTop: '8px',
-          fontWeight: '500'
-        }}>Choose the most appropriate category based on the exposure incident</p>
+          fontWeight: '600'
+        }}>Choose the most appropriate category based on the exposure incide  nt</p>
       </div>
       <div className="options">
         {options.map(o => (

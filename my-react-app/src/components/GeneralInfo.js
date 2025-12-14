@@ -18,26 +18,47 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           fontWeight: '500'
         }}>
           This clinical decision support tool has been designed to assist healthcare professionals in determining whether Rabies Vaccine and/or Rabies Immunoglobulin(RIG) are required following an animal exposure when the patient presents for the first time after exposure.
-          This support tool is based on the National Guidelines for Rabies Prophylaxis 2019 issued by MOHFW, Govt of India. Before proceeding further, the Health Care Professional is required to read the information provided below:-
+          This support tool is based on the National Guidelines for Rabies Prophylaxis 2019 issued by MOHFW, Govt of India.
         </p>
+        
+        <div style={{
+          maxWidth: '680px',
+          margin: '24px auto',
+          padding: '16px 20px',
+          backgroundColor: '#fff3cd',
+          border: '2px solid #ffc107',
+          borderRadius: '8px',
+          boxShadow: '0 2px 8px rgba(255, 193, 7, 0.2)'
+        }}>
+          <p style={{
+            fontSize: '17px',
+            fontWeight: '700',
+            color: '#856404',
+            margin: '0',
+            lineHeight: '1.6',
+            textAlign: 'center'
+          }}>
+            Before proceeding further, the Health Care Professional is required to read the information about PEP provided below:-
+          </p>
+        </div>
       </div>
 
       <div style={{ background: 'var(--bg-alt)', padding: '24px', borderRadius: '16px', marginBottom: '24px' }}>
         <ul className="info-list">
-          <li><strong>Wound Management</strong> means washing the wound/s with soap and water for 15 minutes and applying Povidone Iodine or alcohol. If soap and antiseptic are not available, wash with water only. If the patient presents late after exposure, wash the wound if its not healed and requires washing.Tetanus to be administered as per the National Guidelines.</li>
+          <li><strong>Wound Management</strong> means washing the wound/s with soap and water for 15 minutes and applying Povidone Iodine or alcohol. If soap and antiseptic are not available, wash with water only. If the patient presents late after exposure, wash the wound if its not healed and requires washing. Suturing to be done, if required but only after administration of RIG(if indicated). Tetanus to be administered as per the National Guidelines.</li>
           <li><strong>Rabies Immunoglobulin (RIG) should ONLY be administered INTO THE DEPTH AND AROUND THE WOUND</strong>.</li>
           <li><strong>There is no need to do a skin test prior to administering ERIG and HRIG</strong> as this does not predict anaphylaxis</li>
           <li><strong>RIG should be administered within 7 days of receiving the first dose of Rabies Vaccine</strong></li>
-          <li><strong>Rabies Vaccine</strong> can be <strong>administered by Intramuscular or Intradermal Route</strong>. Both routes are equally effective</li>
+          <li><strong>Rabies Vaccine</strong> can be <strong>administered by Intramuscular or Intradermal Route</strong>. Both routes are <strong>equally effective</strong></li>
           <li><strong>Dosing Schedule for Intramuscular Rabies Vaccine comprises of 5 doses of Rabies Vaccine on Day 0, 3, 7, 14 and 28 days</strong></li>
-          <li>Dosing Schedule for <strong>Intradermal Rabies Vaccine</strong> comprises of <strong>4 doses</strong> of Rabies Vaccine on Day 0, 3, 7 and 28 days</li>
+          <li><strong>Dosing Schedule for Intradermal Rabies Vaccine comprises of 4 doses of Rabies Vaccine on Day 0, 3, 7 and 28 days</strong></li>
           <li><strong>Day 0</strong> means <strong>Day of administering first dose of Rabies Vaccine</strong> and <strong>NOT THE DAY OF BITE/EXPOSURE</strong></li>
           <li><strong>The site of vaccine administration should not be rubbed after administration</strong></li>
           <li><strong>Pregnancy, Lactation, Old age, Infancy and concurrent illness are NOT CONTRAINDICATIONS for administering Rabies Vaccine</strong></li>
-          <li>Patient receiving Chloroquine for treatment of malaria OR patients receiving immunosuppressives/chemotherapy OR patients of HV/AIDS <strong>should be given Rabies Vaccine by Intramuscular Route ONLY</strong>. Intradermal Route is avoided in these cases.</li>
+          <li><strong>Patient receiving Chloroquine for treatment of malaria OR patients receiving immunosuppressives/chemotherapy OR patients of HV/AIDS should be given Rabies Vaccine by INTRAMUSCULAR ROUTE ONLY</strong>. Intradermal Route is avoided in these cases.</li>
           <li><strong>Rabies Vaccine</strong> to be administered immediately on reconstitution or can be administered for <strong>6-8 hours</strong> after reconstitution if stored at <strong>2-8°C</strong> after reconstitution</li>
           <li><strong>Previous reaction to any brand of Rabies Vaccine is a CONTRAINDICATION TO USE THE SAME BRAND OF VACCINE. In such cases, alternative brand can be used</strong></li>
-          <li>There is <strong>no maximum time after the bite to administer Rabies Vaccine</strong>. It can be administered even months to years after the exposure</li>
+          <li>There is <strong>no maximum time after the bite to administer Rabies Vaccine</strong>. It can be <strong>administered even months to years after the exposure</strong></li>
           <li>Keep the patient under observation for 15-20 minutes after administering Rabies Vaccine or RIG.</li>
         </ul>
       </div>

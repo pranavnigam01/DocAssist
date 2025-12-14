@@ -23,7 +23,7 @@ export default function PastCCVQuestion({ pastCCV, setPastCCV, onNext, onBack })
           <span style={{ marginTop: '4px' }}>📋</span>
           <div style={{ flex: 1 }}>
             <span style={{ fontSize: '16px', fontWeight: '600', display: 'block', marginBottom: '8px' }}>
-              Does the patient have reliable history of completing a schedule of Rabies Cell Culture Vaccine in past (complete schedule means having completed  5 doses of Intramuscular Rabies Vaccine or 4 doses of Intradermal Rabies Vaccine)?
+              Does the patient have reliable/documented history of completing a schedule of Rabies Cell Culture Vaccine in past (complete schedule means having completed  5 doses of Intramuscular Rabies Vaccine or 4 doses of Intradermal Rabies Vaccine)?
             </span>
             <span style={{ fontSize: '14px', color: 'var(--text-muted)', fontStyle: 'italic', display: 'block', marginTop: '8px' }}>
               (History of receiving any vaccine in abdomen or having received 14 injections should be taken as NO)

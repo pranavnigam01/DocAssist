@@ -53,7 +53,7 @@ function determineRecommendation(data) {
         title: 'Give vaccine on Day 0 and Day 3', 
         icon: '💉',
         color: '#f59e0b',
-        details: 'Reliable past CCV but not completed in last 3 months: give vaccine on Day 0 and Day 3. No RIG needed.' 
+        details: 'Reliable/Documented past CCV but not completed in last 3 months: give vaccine on Day 0 and Day 3. No RIG needed.' 
       };
     }
   }
@@ -72,7 +72,7 @@ function determineRecommendation(data) {
       title: 'Category III — Vaccine ± RIG', 
       icon: '🚨',
       color: '#ef4444',
-      details: 'Wound management. If no reliable past CCV: give full schedule of CCV (IM or ID) along with RIG. If reliable past CCV: give vaccine as per past schedule (no RIG).' 
+      details: 'Wound management. If no reliable/documented past CCV: give full schedule of CCV (IM or ID) along with RIG. If reliable/documented past CCV: give vaccine as per past schedule (no RIG).' 
     };
   }
 
