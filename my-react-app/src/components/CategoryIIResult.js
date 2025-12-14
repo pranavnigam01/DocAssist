@@ -10,28 +10,28 @@ export default function CategoryIIResult({ type, exposureType, onBack, onReset }
       bgColor: 'rgba(239, 68, 68, 0.05)'
     },
     noVaccineNeeded: {
-      title: 'NO NEED OF RABIES VACCINE AND RIG',
+      title: 'NO NEED OF RABIES VACCINE AND RIG. Wound Management to be done.',
       icon: '✅',
       color: '#10b981',
       details: 'The patient has completed a reliable/documented schedule of Rabies Cell Culture Vaccine within the last 3 months. No need of rabies vaccine or RIG. Perform wound management.',
       bgColor: 'rgba(16, 185, 129, 0.05)'
     },
     day0and3: {
-      title: 'ADMINISTER INTRADERMAL OR INTRAMUSCULAR RABIES VACCINE ON DAY 0 AND DAY 3',
+      title: 'ADMINISTER INTRADERMAL OR INTRAMUSCULAR RABIES VACCINE ON DAY 0 AND DAY 3. Wound Management to be done.',
       icon: '💉',
       color: '#f59e0b',
       details: 'Administer intradermal or intramuscular Rabies Vaccine on Day 0 and Day 3. Wound Management to be done. No need of RIG.',
       bgColor: 'rgba(245, 158, 11, 0.05)'
     },
     fullSchedule: {
-      title: 'ADMINISTER FULL SCHEDULE OF INTRAMUSCULAR OR INTRADERMAL RABIES VACCINE',
+      title: 'ADMINISTER FULL SCHEDULE OF INTRAMUSCULAR OR INTRADERMAL RABIES VACCINE. Wound Management to be done.',
       icon: '💉',
       color: '#f59e0b',
       details: 'Administer full schedule of intramuscular or intradermal Rabies Vaccine and do Wound Management. No need of RIG.',
       bgColor: 'rgba(245, 158, 11, 0.05)'
     },
     cat3WithRIG: {
-      title: 'ADMINISTER FULL SCHEDULE OF INTRAMUSCULAR OR INTRADERMAL RABIES VACCINE WITH RIG',
+      title: 'ADMINISTER FULL SCHEDULE OF INTRAMUSCULAR OR INTRADERMAL RABIES VACCINE WITH RIG. Wound Management to be done.',
       icon: '💉',
       color: '#ef4444',
       details: 'Administer full schedule of intramuscular or intradermal Rabies Vaccine along with RIG. Perform Wound Management.',
@@ -43,22 +43,6 @@ export default function CategoryIIResult({ type, exposureType, onBack, onReset }
 
   return (
     <div>
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <div style={{ 
-          fontSize: '72px', 
-          marginBottom: '24px',
-          filter: `drop-shadow(0 4px 12px ${result.color}40)`
-        }}>{result.icon}</div>
-        <h3 style={{ 
-          color: result.color,
-          fontSize: '28px',
-          marginBottom: '16px',
-          textTransform: 'uppercase',
-          letterSpacing: '0.5px',
-          lineHeight: '1.3'
-        }}>{result.title}</h3>
-      </div>
-
       <div className="result-card" style={{ 
         borderColor: result.color,
         background: `linear-gradient(135deg, ${result.bgColor} 0%, rgba(255, 255, 255, 0.95) 100%)`
@@ -84,9 +68,9 @@ export default function CategoryIIResult({ type, exposureType, onBack, onReset }
           }}>
             {result.icon}
           </div>
-          <div>
-            <h4 style={{ color: result.color, margin: 0, fontSize: '22px', lineHeight: '1.3' }}>
-              Clinical Recommendation
+          <div style={{ flex: 1 }}>
+            <h4 style={{ color: result.color, margin: 0, fontSize: '22px', lineHeight: '1.3', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              {result.title}
             </h4>
             <p style={{ 
               margin: '4px 0 0', 

@@ -87,43 +87,8 @@ function determineRecommendation(data) {
 export default function Result({ data, onBack, onReset }) {
   const rec = determineRecommendation(data);
 
-  const getAnimalLabel = (key) => {
-    const labels = {
-      'warm': 'Warm-blooded animal',
-      'wild': 'Wild animal',
-      'wildrodent': 'Wild rodent',
-      'secretions': 'Exposure to secretions',
-      'domesticrodent': 'Domestic animal (No PEP)',
-      'other': 'Other animal'
-    };
-    return labels[key] || key;
-  };
-
-  const getVaxStatusLabel = (key) => {
-    const labels = {
-      'yes_protective': 'Yes — Protective titres',
-      'yes_notitle': 'Yes — No titres',
-      'no': 'No',
-      'dontknow': "Don't Know"
-    };
-    return labels[key] || key;
-  };
-
-  const getExposureLabel = (key) => {
-    const labels = {
-      'cat1': 'Category I',
-      'cat2': 'Category II',
-      'cat3': 'Category III'
-    };
-    return labels[key] || key;
-  };
-
   return (
     <div>
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <div style={{ fontSize: '64px', marginBottom: '16px' }}>{rec.icon}</div>
-        <h3>Recommendation</h3>
-      </div>
       <div className="result-card" style={{ borderColor: rec.color }}>
         <div style={{ 
           display: 'flex', 
@@ -134,47 +99,19 @@ export default function Result({ data, onBack, onReset }) {
           borderBottom: `2px solid ${rec.color}`
         }}>
           <span style={{ fontSize: '32px' }}>{rec.icon}</span>
-          <h4 style={{ color: rec.color, margin: 0 }}>{rec.title}</h4>
+          <h4 style={{ color: rec.color, margin: 0, fontSize: '22px', lineHeight: '1.3', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', flex: 1 }}>
+            {rec.title}
+          </h4>
         </div>
-        <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text)' }}>{rec.details}</p>
-
-        <hr style={{ margin: '32px 0', border: 'none', borderTop: '2px solid var(--border)' }} />
-        <h5 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-          <span>📊</span>
-          <span>Inputs Summary</span>
-        </h5>
-        <ul style={{ 
-          listStyle: 'none', 
-          margin: 0,
+        <div style={{
           background: 'white',
-          borderRadius: '12px',
-          padding: '16px'
+          padding: '24px',
+          borderRadius: '16px',
+          border: '1px solid var(--border-light)',
+          marginBottom: '24px'
         }}>
-          <li style={{ padding: '10px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
-            <strong style={{ color: 'var(--accent)' }}>Animal:</strong>
-            <span>{data.animal ? getAnimalLabel(data.animal) : '—'}</span>
-          </li>
-          <li style={{ padding: '10px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
-            <strong style={{ color: 'var(--accent)' }}>Vaccination status:</strong>
-            <span>{data.vaxStatus ? getVaxStatusLabel(data.vaxStatus) : '—'}</span>
-          </li>
-          <li style={{ padding: '10px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
-            <strong style={{ color: 'var(--accent)' }}>Exposure type:</strong>
-            <span>{data.exposureType ? getExposureLabel(data.exposureType) : '—'}</span>
-          </li>
-          <li style={{ padding: '10px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
-            <strong style={{ color: 'var(--accent)' }}>Immunosuppressed:</strong>
-            <span>{data.immunoStatus ? data.immunoStatus.charAt(0).toUpperCase() + data.immunoStatus.slice(1) : '—'}</span>
-          </li>
-          <li style={{ padding: '10px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between' }}>
-            <strong style={{ color: 'var(--accent)' }}>Past CCV:</strong>
-            <span>{data.pastCCV ? data.pastCCV.charAt(0).toUpperCase() + data.pastCCV.slice(1) : '—'}</span>
-          </li>
-          <li style={{ padding: '10px 0', display: 'flex', justifyContent: 'space-between' }}>
-            <strong style={{ color: 'var(--accent)' }}>Completed within 3 months:</strong>
-            <span>{data.completed3Months ? data.completed3Months.charAt(0).toUpperCase() + data.completed3Months.slice(1) : '—'}</span>
-          </li>
-        </ul>
+          <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text)', margin: 0, fontWeight: '500' }}>{rec.details}</p>
+        </div>
 
         <div className="row actions">
           <button className="btn ghost" onClick={onBack}>← Back</button>

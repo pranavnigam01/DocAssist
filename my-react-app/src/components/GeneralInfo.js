@@ -60,6 +60,7 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           <li><strong>Previous reaction to any brand of Rabies Vaccine is a CONTRAINDICATION TO USE THE SAME BRAND OF VACCINE. In such cases, alternative brand can be used</strong></li>
           <li>There is <strong>no maximum time after the bite to administer Rabies Vaccine</strong>. It can be <strong>administered even months to years after the exposure</strong></li>
           <li>Keep the patient under observation for 15-20 minutes after administering Rabies Vaccine or RIG.</li>
+          <li>In some centres, Category II exposure on head, neck, genitalia, hands and feet is taken as Category III exposure but this is not as per National Guidelines. Hence, treating Health Care Provider may decide based on local practice. It should be remembered that benefit of doubt should go in favour of patient.</li>
         </ul>
       </div>
 

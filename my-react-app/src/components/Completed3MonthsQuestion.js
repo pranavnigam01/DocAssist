@@ -11,8 +11,8 @@ export default function Completed3MonthsQuestion({ completed3Months, setComplete
         }}>📅</div>
         <h3>Vaccination Timeline</h3>
         <p style={{ 
-          fontSize: '14px', 
-          color: 'var(--text-muted)', 
+          fontSize: '16px', 
+          color: '#2563eb', 
           marginTop: '8px',
           fontWeight: '600'
         }}>Please provide information about when the vaccination was completed</p>

@@ -11,10 +11,10 @@ export default function PastCCVQuestion({ pastCCV, setPastCCV, onNext, onBack })
         }}>📋</div>
         <h3>Vaccination History</h3>
         <p style={{ 
-          fontSize: '14px', 
-          color: 'var(--text-muted)', 
+          fontSize: '16px', 
+          color: '#2563eb', 
           marginTop: '8px',
-          fontWeight: '500'
+          fontWeight: '600'
         }}>Please provide information about past vaccination history</p>
       </div>
 

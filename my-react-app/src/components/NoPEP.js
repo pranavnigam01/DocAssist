@@ -13,15 +13,6 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
     return labels[key] || key;
   };
 
-  const getExposureLabel = (key) => {
-    const labels = {
-      'cat1': 'Category I',
-      'cat2': 'Category II',
-      'cat3': 'Category III'
-    };
-    return labels[key] || key;
-  };
-
   const title = customTitle || 'No PEP Required. Wound Management to be done';
 
   return (
@@ -51,8 +42,8 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
           }}>
             ✅
           </div>
-          <div>
-            <h4 style={{ color: 'var(--success)', margin: 0, fontSize: '24px' }}>
+          <div style={{ flex: 1 }}>
+            <h4 style={{ color: 'var(--success)', margin: 0, fontSize: '22px', lineHeight: '1.3', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               {title}
             </h4>
           </div>
@@ -65,18 +56,6 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
           border: '1px solid var(--border-light)',
           marginBottom: '24px'
         }}>
-          <h5 style={{ 
-            margin: '0 0 16px', 
-            color: 'var(--text)',
-            fontSize: '16px',
-            fontWeight: '600',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}>
-            <span>📋</span>
-            <span>Clinical Recommendation</span>
-          </h5>
           <p style={{ 
             fontSize: '16px', 
             lineHeight: '1.8', 
@@ -94,38 +73,6 @@ export default function NoPEP({ animal, exposureType, onBack, onReset, customMes
                 </strong>, there is no requirement for Post-Exposure Prophylaxis (PEP) with rabies vaccine or Rabies Immunoglobulin (RIG). Wound Management to be done.
               </>
             )}
-          </p>
-        </div>
-
-        <div style={{
-          background: 'white',
-          padding: '20px',
-          borderRadius: '12px',
-          border: '1px solid var(--border-light)'
-        }}>
-          <h5 style={{ 
-            margin: '0 0 12px', 
-            color: 'var(--text-muted)',
-            fontSize: '13px',
-            fontWeight: '600',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px'
-          }}>
-            {exposureType === 'cat1' ? 'Selected Exposure Category' : 'Selected Animal Category'}
-          </h5>
-          <p style={{ 
-            margin: 0, 
-            fontSize: '15px', 
-            color: 'var(--text)',
-            fontWeight: '500',
-            padding: '12px',
-            background: 'var(--bg-alt)',
-            borderRadius: '8px'
-          }}>
-            {exposureType === 'cat1' 
-              ? (exposureType ? getExposureLabel(exposureType) : '—')
-              : (animal ? getAnimalLabel(animal) : '—')
-            }
           </p>
         </div>
 

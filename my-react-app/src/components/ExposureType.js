@@ -47,10 +47,10 @@ export default function ExposureType({ exposureType, setExposureType, immunoStat
         }}>⚠️</div>
         <h3>Exposure Category & Clinical Assessment</h3>
         <p style={{ 
-          fontSize: '14px', 
-          color: 'var(--text-muted)', 
+          fontSize: '16px', 
+          color: '#2563eb', 
           marginTop: '8px',
-          fontWeight: '500'
+          fontWeight: '600'
         }}>Classify the exposure</p>
       </div>
 

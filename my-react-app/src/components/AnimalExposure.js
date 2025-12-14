@@ -18,7 +18,7 @@ export default function AnimalExposure({ animal, setAnimal, onNext, onBack }) {
         <h3>Select the animal species to which the patient was exposed:</h3>
         <p style={{ 
           fontSize: '16px', 
-          color: '#2b5dc8ff', 
+          color: '#2563eb', 
           marginTop: '8px',
           fontWeight: '600'
         }}>Choose the most appropriate category based on the exposure incident</p>
