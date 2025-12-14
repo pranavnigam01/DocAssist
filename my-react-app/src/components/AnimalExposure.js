@@ -21,7 +21,7 @@ export default function AnimalExposure({ animal, setAnimal, onNext, onBack }) {
           color: '#2b5dc8ff', 
           marginTop: '8px',
           fontWeight: '600'
-        }}>Choose the most appropriate category based on the exposure incide  nt</p>
+        }}>Choose the most appropriate category based on the exposure incident</p>
       </div>
       <div className="options">
         {options.map(o => (
