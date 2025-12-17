@@ -55,12 +55,11 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           <li><strong>Day 0</strong> means <strong>Day of administering first dose of Rabies Vaccine</strong> and <strong>NOT THE DAY OF BITE/EXPOSURE</strong></li>
           <li><strong>The site of vaccine administration should not be rubbed after administration</strong></li>
           <li><strong>Pregnancy, Lactation, Old age, Infancy and concurrent illness are NOT CONTRAINDICATIONS for administering Rabies Vaccine</strong></li>
-          <li><strong>Patient receiving Chloroquine for treatment of malaria OR patients receiving immunosuppressives/chemotherapy OR patients of HV/AIDS should be given Rabies Vaccine by INTRAMUSCULAR ROUTE ONLY</strong>. Intradermal Route is avoided in these cases.</li>
+          <li><strong>Patient receiving Chloroquine for treatment of malaria OR patients receiving immunosuppressives/chemotherapy OR patients of HIV/AIDS should be given Rabies Vaccine by INTRAMUSCULAR ROUTE ONLY</strong>. Intradermal Route is avoided in these cases.</li>
           <li><strong>Rabies Vaccine</strong> to be administered immediately on reconstitution or can be administered for <strong>6-8 hours</strong> after reconstitution if stored at <strong>2-8°C</strong> after reconstitution</li>
           <li><strong>Previous reaction to any brand of Rabies Vaccine is a CONTRAINDICATION TO USE THE SAME BRAND OF VACCINE. In such cases, alternative brand can be used</strong></li>
           <li>There is <strong>no maximum time after the bite to administer Rabies Vaccine</strong>. It can be <strong>administered even months to years after the exposure</strong></li>
           <li>Keep the patient under observation for 15-20 minutes after administering Rabies Vaccine or RIG.</li>
-          <li>In some centres, Category II exposure on head, neck, genitalia, hands and feet is taken as Category III exposure but this is not as per National Guidelines. Hence, treating Health Care Provider may decide based on local practice. It should be remembered that benefit of doubt should go in favour of patient.</li>
         </ul>
       </div>
 
@@ -100,6 +99,52 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           <button className="btn" onClick={onNext} disabled={!acknowledged}>
             {acknowledged ? 'Continue →' : 'Please acknowledge to continue'}
           </button>
+        </div>
+      </div>
+
+      <div style={{ 
+        marginTop: '48px',
+        paddingTop: '32px',
+        borderTop: '2px solid var(--border-light)',
+        textAlign: 'center'
+      }}>
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 1) 100%)',
+          padding: '24px',
+          borderRadius: '16px',
+          border: '2px solid var(--border-light)',
+          boxShadow: 'var(--shadow-sm)',
+          maxWidth: '800px',
+          margin: '0 auto'
+        }}>
+          <div style={{ 
+            fontSize: '14px', 
+            color: 'var(--text)',
+            lineHeight: '1.8',
+            fontWeight: '500'
+          }}>
+            <div style={{ marginBottom: '12px', fontWeight: '700', color: 'var(--accent)', fontSize: '16px' }}>
+              Conceptualized and created by:
+            </div>
+            <div style={{ marginBottom: '6px', fontSize: '15px' }}>
+              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Nitin Sinha</strong>, Professor, Department of Medicine, ABVIMS & Dr. RML Hospital
+            </div>
+            <div style={{ marginBottom: '20px', fontSize: '15px' }}>
+              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Mr. Pranav Nigam</strong>, Senior Software Engineer at an MNC
+            </div>
+            <div style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: 'var(--accent)', fontSize: '16px' }}>
+              With contributions from:
+            </div>
+            <div style={{ marginBottom: '6px', fontSize: '15px' }}>
+              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Mala Chhabra</strong>, Senior Consultant, Microbiology, ABVIMS & Dr. RML Hospital
+            </div>
+            <div style={{ marginBottom: '6px', fontSize: '15px' }}>
+              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Parul Goyal</strong>, Director Professor, Biochemistry, ABVIMS & Dr. RML Hospital
+            </div>
+            <div style={{ fontSize: '15px' }}>
+              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Sanjeet Panesar</strong>, Professor, Community Medicine, ABVIMS & Dr. RML Hospital
+            </div>
+          </div>
         </div>
       </div>
     </div>

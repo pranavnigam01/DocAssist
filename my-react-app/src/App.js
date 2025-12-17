@@ -9,6 +9,7 @@ import PastCCVQuestion from './components/PastCCVQuestion';
 import Completed3MonthsQuestion from './components/Completed3MonthsQuestion';
 import CategoryIIResult from './components/CategoryIIResult';
 import CategoryIIIExposure from './components/CategoryIIIExposure';
+import PreExposureProphylaxisQuestion from './components/PreExposureProphylaxisQuestion';
 
 export default function App() {
   const [step, setStep] = useState(0);
@@ -21,6 +22,7 @@ export default function App() {
   const [vaxStatus, setVaxStatus] = useState(null);
   const [exposureType, setExposureType] = useState(null);
   const [immunoStatus, setImmunoStatus] = useState(null); // corticosteroids / chemo / HIV
+  const [preExposureProphylaxis, setPreExposureProphylaxis] = useState(null); // pre-exposure prophylaxis history
   const [pastCCV, setPastCCV] = useState(null); // reliable history of CCV
   const [completed3Months, setCompleted3Months] = useState(null);
 
@@ -31,6 +33,7 @@ export default function App() {
     setVaxStatus(null);
     setExposureType(null);
     setImmunoStatus(null);
+    setPreExposureProphylaxis(null);
     setPastCCV(null);
     setCompleted3Months(null);
   };
@@ -158,7 +161,7 @@ export default function App() {
                 if (immunoStatus === 'yes') {
                   setStep(9); // Go to result: IM vaccine + RIG
                 } else {
-                  setStep(7); // Go to PastCCVQuestion
+                  setStep(11); // Go to PreExposureProphylaxisQuestion
                 }
               }}
               onBack={() => {
@@ -169,6 +172,21 @@ export default function App() {
                   setStep(2);
                 }
               }}
+            />
+          )}
+
+          {displayStep === 11 && (
+            <PreExposureProphylaxisQuestion
+              preExposureProphylaxis={preExposureProphylaxis}
+              setPreExposureProphylaxis={setPreExposureProphylaxis}
+              onNext={() => {
+                if (preExposureProphylaxis === 'yes') {
+                  setStep(9); // Go to result: Day 0 and Day 3 (pre-exposure yes)
+                } else {
+                  setStep(7); // Go to PastCCVQuestion (Vaccination History)
+                }
+              }}
+              onBack={() => setStep(6)}
             />
           )}
 
@@ -183,7 +201,7 @@ export default function App() {
                   setStep(9); // Go to result: full schedule
                 }
               }}
-              onBack={() => setStep(6)}
+              onBack={() => setStep(11)}
             />
           )}
 
@@ -205,6 +223,7 @@ export default function App() {
           {displayStep === 9 && (
             <CategoryIIResult
               type={
+                preExposureProphylaxis === 'yes' ? 'preExposureYes' :
                 immunoStatus === 'yes' ? 'immunoYes' :
                 pastCCV === 'yes' && completed3Months === 'yes' ? 'noVaccineNeeded' :
                 pastCCV === 'yes' && completed3Months === 'no' ? 'day0and3' :
@@ -214,7 +233,10 @@ export default function App() {
               exposureType={exposureType}
               onBack={() => {
                 // Determine which screen to go back to based on the flow
-                if (immunoStatus === 'yes') {
+                if (preExposureProphylaxis === 'yes') {
+                  // Came from preExposureProphylaxis question with Yes
+                  setStep(11);
+                } else if (immunoStatus === 'yes') {
                   // Came from immunoStatus question
                   setStep(6);
                 } else if (pastCCV === 'yes' && completed3Months !== null) {
@@ -241,7 +263,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="footer">Made for clinical decision support — all content hardcoded from requirement document.</div>
+        <div className="footer">Made for clinical decision support.</div>
       </div>
     </div>
   );
