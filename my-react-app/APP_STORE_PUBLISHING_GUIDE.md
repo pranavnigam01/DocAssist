@@ -134,8 +134,6 @@ Conceptualized and created by:
 
 With contributions from:
 - Dr. Mala Chhabra, Senior Consultant, Microbiology, ABVIMS & Dr. RML Hospital
-- Dr. Parul Goyal, Director Professor, Biochemistry, ABVIMS & Dr. RML Hospital
-- Dr. Sanjeet Panesar, Professor, Community Medicine, ABVIMS & Dr. RML Hospital
 ```
 
 **App icon**: 512x512 PNG (transparent background recommended)

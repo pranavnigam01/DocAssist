@@ -60,7 +60,7 @@ export default function App() {
   return (
     <div className="app-root">
       <div className="card">
-        <h1 className="title">POST EXPOSURE PROPHYLAXIS (PEP) FOR RABIES PREVENTION</h1>
+        <h1 className="title">POST EXPOSURE PROPHYLAXIS (PEP) FOR RABIES PREVENTION FOR HEALTH CARE PROFESSIONALS</h1>
         <div className="steps">
           {steps.map((s, i) => (
             <div

@@ -135,14 +135,8 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
             <div style={{ marginTop: '20px', marginBottom: '12px', fontWeight: '700', color: 'var(--accent)', fontSize: '16px' }}>
               With contributions from:
             </div>
-            <div style={{ marginBottom: '6px', fontSize: '15px' }}>
-              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Mala Chhabra</strong>, Senior Consultant, Microbiology, ABVIMS & Dr. RML Hospital
-            </div>
-            <div style={{ marginBottom: '6px', fontSize: '15px' }}>
-              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Parul Goyal</strong>, Director Professor, Biochemistry, ABVIMS & Dr. RML Hospital
-            </div>
             <div style={{ fontSize: '15px' }}>
-              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Sanjeet Panesar</strong>, Professor, Community Medicine, ABVIMS & Dr. RML Hospital
+              <strong style={{ color: 'var(--text)', fontWeight: '600' }}>Dr. Mala Chhabra</strong>, Senior Consultant, Microbiology, ABVIMS & Dr. RML Hospital
             </div>
           </div>
         </div>
