@@ -17,5 +17,31 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      (() => {
+        const noticeText = 'This app is a copyright item of the owners under the Copyright Office, Government of India.';
+
+        const addCopyrightNotice = () => {
+          const root = document.getElementById('root');
+          const description = Array.from(root.querySelectorAll('p')).find((paragraph) =>
+            paragraph.textContent.startsWith('This clinical decision support tool has been designed')
+          );
+
+          if (!description || root.querySelector('[data-copyright-notice]')) return;
+
+          const notice = document.createElement('p');
+          notice.dataset.copyrightNotice = 'true';
+          notice.textContent = noticeText;
+          notice.style.cssText = 'max-width:680px;margin:20px auto 0;color:#475569;font-size:14px;font-weight:600;line-height:1.6;text-align:center;';
+          description.insertAdjacentElement('afterend', notice);
+        };
+
+        new MutationObserver(addCopyrightNotice).observe(document.getElementById('root'), {
+          childList: true,
+          subtree: true
+        });
+        addCopyrightNotice();
+      })();
+    </script>
   </body>
 </html>

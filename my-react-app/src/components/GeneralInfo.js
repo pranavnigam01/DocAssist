@@ -20,6 +20,10 @@ export default function GeneralInfo({ acknowledged, setAcknowledged, onNext }) {
           This clinical decision support tool has been designed to assist healthcare professionals in determining whether Rabies Vaccine and/or Rabies Immunoglobulin(RIG) are required following an animal exposure when the patient presents for the first time after exposure.
           This support tool is based on the National Guidelines for Rabies Prophylaxis 2019 issued by MOHFW, Govt of India.
         </p>
+
+        <p className="copyright-notice">
+          This app is a copyright item of the owners under the Copyright Office, Government of India.
+        </p>
         
         <div style={{
           maxWidth: '680px',

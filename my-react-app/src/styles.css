@@ -358,6 +358,16 @@ h5 {
   list-style: none;
 }
 
+.copyright-notice {
+  max-width: 680px;
+  margin: 20px auto 0;
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .info-list li {
   padding: 12px 0 12px 32px;
   position: relative;
